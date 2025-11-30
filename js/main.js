@@ -1,46 +1,36 @@
-/* ===================================================================
- * Luther 1.0.0 - Main JS (Final with tighter gradient)
- * ------------------------------------------------------------------- */
+// ===============================
+// Main JS (Final Stable Build)
+// ===============================
 
-(function (html) {
-    "use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  html.classList.remove("no-js");
+  html.classList.add("js");
 
-    html.className = html.className.replace(/\bno-js\b/g, "") + " js ";
+  const isMobile = window.matchMedia("(max-width: 800px)").matches;
 
-    const isMobile = window.matchMedia("(max-width: 800px)").matches;
-/* --------------------------------------------------------------
- * Page Gradient Cursor (small & hides on nav/footer/leave)
- * -------------------------------------------------------------- */
+  // --------------------------------------------------------------
+  // Cursor Spotlight Gradient (small, reactive, hides on nav/footer)
+  // --------------------------------------------------------------
+  const grad = document.querySelector(".page-gradient");
 
-    const grad = document.querySelector(".page-gradient");
-
-    function setHighlight(xPercent, yPercent) {
+  function setHighlight(xPercent, yPercent) {
     if (!grad) return;
 
-    grad.style.background = `
-        radial-gradient(
-        circle at ${xPercent}% ${yPercent}%,
-        var(--color-accent-soft) 0%,
-        transparent 13%
-        ),
-        linear-gradient(
-        to bottom,
-        var(--color-bg),
-        var(--color-bg-elevated)
-        )
-    `;
-    }
+    document.documentElement.style.setProperty("--spot-x", `${xPercent}%`);
+    document.documentElement.style.setProperty("--spot-y", `${yPercent}%`);
+  }
 
-    function enableHighlight() {
+  function enableHighlight() {
     document.documentElement.style.setProperty("--highlight-opacity", "1");
-    }
+  }
 
-    function disableHighlight() {
+  function disableHighlight() {
     document.documentElement.style.setProperty("--highlight-opacity", "0");
-    }
+  }
 
-    // Mouse moves anywhere in viewport . update dot + show it
-    window.addEventListener("mousemove", function (event) {
+  // Move and show gradient
+  window.addEventListener("pointermove", (event) => {
     if (!grad) return;
 
     const x = (event.clientX / window.innerWidth) * 100;
@@ -48,77 +38,71 @@
 
     setHighlight(x, y);
     enableHighlight();
-    });
+  });
 
-    // Leave viewport . hide
-    window.addEventListener("mouseleave", disableHighlight);
+  // Hide when leaving viewport
+  window.addEventListener("mouseleave", disableHighlight);
 
-    // Enter header or footer . hide
-    const headerEl = document.querySelector("header");
-    const footerEl = document.querySelector("footer");
-    const mainEl   = document.querySelector("main");
+  // Hide on header and footer, show on main
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  const main = document.querySelector("main");
 
-    if (headerEl) {
-    headerEl.addEventListener("mouseenter", disableHighlight);
+  header?.addEventListener("mouseenter", disableHighlight);
+  footer?.addEventListener("mouseenter", disableHighlight);
+  main?.addEventListener("mouseenter", enableHighlight);
+
+  // --------------------------------------------------------------
+  // Scroll Reveal (desktop only)
+  // --------------------------------------------------------------
+  function initScrollReveal() {
+    if (isMobile) return;
+
+    const items = document.querySelectorAll(".reveal-on-scroll");
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
     }
-    if (footerEl) {
-    footerEl.addEventListener("mouseenter", disableHighlight);
-    }
 
-    // Back to main content . show
-    if (mainEl) {
-    mainEl.addEventListener("mouseenter", enableHighlight);
-    }
-
-    /* --------------------------------------------------------------
-     * Preloader
-     * -------------------------------------------------------------- */
-    const ssPreloader = function () {
-        const preloader = document.querySelector("#preloader");
-        if (!preloader) return;
-
-        window.addEventListener("load", function () {
-            html.classList.remove("ss-preload");
-            html.classList.add("ss-loaded");
-
-            setTimeout(() => {
-                const tl = anime.timeline({
-                    easing: "easeInOutCubic",
-                    duration: 600,
-                    autoplay: true,
-                });
-
-                tl.add({
-                    targets: "#loader",
-                    opacity: 0,
-                    duration: 400,
-                    begin: () => window.scrollTo(0, 0),
-                }).add({
-                    targets: "#preloader",
-                    opacity: 0,
-                    complete: () => {
-                        preloader.style.display = "none";
-                    },
-                });
-            }, 100);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            observer.unobserve(e.target);
+          }
         });
-    };
+      },
+      { threshold: 0.15 }
+    );
 
-    /* (All other sections stay the same — animations, menu, swiper, etc.) */
+    items.forEach((el) => observer.observe(el));
+  }
 
-    /* --------------------------------------------------------------
-     * Initialize JS
-     * -------------------------------------------------------------- */
-    (function ssInit() {
-        ssPreloader();
-        ssHeroGradientCursor();
-        // keep your other initializers if needed:
-        // ssMobileMenu();
-        // ssScrollSpy();
-        // ssViewAnimate();
-        // ssSwiper();
-        // ssLightbox();
-        // ssAlertBoxes();
-        // ssMoveTo();
-    })();
-})(document.documentElement);
+  initScrollReveal();
+
+  // --------------------------------------------------------------
+  // Simple Preloader Fade Out
+  // --------------------------------------------------------------
+  function initPreloader() {
+    const preloader = document.querySelector("#preloader");
+    const loader = document.querySelector("#loader");
+
+    if (!preloader || !loader) return;
+
+    window.addEventListener("load", () => {
+      loader.style.opacity = "0";
+
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 300);
+      }, 150);
+    });
+  }
+
+  initPreloader();
+});

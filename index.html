@@ -7,12 +7,12 @@
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<!-- FULL-PAGE MOUSE GRADIENT -->
-<div class="page-gradient"></div>
-
 <div class="page-shell">
+
+  <div class="page-gradient"></div>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -20,10 +20,11 @@
       <div class="site-header__brand">
         <a href="#top" class="brand-link">Logan Oscher</a>
       </div>
+
       <nav class="site-header__nav">
-        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#services">Services</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -33,7 +34,7 @@
   <main id="top" class="page-main">
 
     <!-- INTRO -->
-    <section class="section intro">
+    <section class="section intro reveal-on-scroll">
       <p class="eyebrow">Portfolio</p>
 
       <h1 class="intro__title">
@@ -41,117 +42,89 @@
       </h1>
 
       <p class="intro__body">
-        I am Logan, a designer and developer focused on building clear, thoughtful digital experiences. I like taking messy problems and turning them into simple, usable products that feel good for real people to use.
+        I am Logan, a designer and developer focused on building clear, thoughtful digital experiences.
       </p>
 
       <p class="intro__body">
-        I work across UX, visual design, and front end development. From early exploration through prototypes and polished interfaces, I enjoy shaping products that balance creativity with practical execution.
+        I work across UX, visual design, and front-end development. I enjoy shaping products that balance creativity with practical execution.
       </p>
     </section>
 
     <!-- CURRENT -->
-    <section class="section section--tight">
+    <section class="section section--tight reveal-on-scroll">
       <p class="section-label">Currently</p>
       <p class="section-body">
-        Currently studying media and computer science while collaborating on product, UX, and brand projects. Open to internships and freelance work in product design or front end.
+        Currently studying media and computer science while collaborating on product, UX, and brand projects.
       </p>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section about-layout">
-      <h2 class="section-title">About</h2>
-
-      <div class="about-columns">
-
-        <!-- PHOTOS -->
-        <div>
-          <figure class="about-photo">
-            <img src="images/about/logan-portrait-vertical.jpg" alt="Portrait of Logan">
-          </figure>
-
-          <figure class="about-photo">
-            <img src="images/about/logan-portrait-horizontal.jpg" alt="Portrait of Logan">
-          </figure>
-        </div>
-
-        <!-- BIO CONTENT -->
-        <div>
-          <p class="about-bio">
-            I am a UNC student studying media and computer science, focused on designing digital experiences that feel clear, useful, and a little bit playful. I like turning messy ideas into structured interfaces that people actually want to use. My work often sits at the intersection of UX, visual design, and front end, and I enjoy moving from early sketches to interactive prototypes.
-          </p>
-
-          <ul class="about-contact-list">
-            <li><a href="mailto:youremail@example.com">Email</a></li>
-            <li><a href="#" target="_blank">LinkedIn</a></li>
-            <li><a href="#" target="_blank">Behance</a></li>
-            <li><a href="#" target="_blank">Resume</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
     <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal-on-scroll">
       <h2 class="section-title">Projects</h2>
 
-      <!-- PROJECT 1 -->
-      <article class="project">
+      <!-- Project 1 -->
+      <article class="project reveal-on-scroll">
         <figure class="project__media">
-          <img src="images/projects/ebay-cover.jpg" alt="eBay case study">
+          <img src="images/projects/ebay-cover.jpg" alt="eBay UX Case Study">
         </figure>
+
         <header class="project__header">
           <div>
-            <p class="project__eyebrow">Case study</p>
+            <p class="project__eyebrow">Case Study</p>
             <h3 class="project__title">eBay Recommerce Experience</h3>
             <p class="project__meta">UX research, product design, content strategy</p>
           </div>
           <a class="project__link" href="#" target="_blank">Read case study</a>
         </header>
+
         <p class="project__summary">
-          A concept project focused on making recommerce feel more trustworthy and intentional, highlighting authenticity, sustainability, and clearer storytelling around pre-owned goods.
+          A concept project focused on building trust, authenticity, and sustainability around recommerce.
         </p>
       </article>
 
-      <!-- PROJECT 2 -->
-      <article class="project">
+      <!-- Project 2 -->
+      <article class="project reveal-on-scroll">
         <figure class="project__media">
-          <img src="images/projects/app-cover.jpg" alt="Campus Meal App">
+          <img src="images/projects/app-cover.jpg" alt="Student Meal App">
         </figure>
+
         <header class="project__header">
           <div>
-            <p class="project__eyebrow">Case study</p>
+            <p class="project__eyebrow">Case Study</p>
             <h3 class="project__title">Campus Meal Exchange</h3>
-            <p class="project__meta">Product design, UX flows, prototype</p>
+            <p class="project__meta">Product design, UX flows, front-end prototype</p>
           </div>
           <a class="project__link" href="#" target="_blank">Read case study</a>
         </header>
+
         <p class="project__summary">
-          A platform helping students trade, schedule, and track meal swipes more transparently, reducing waste and improving dining flexibility.
+          A platform that lets students trade and track meal swipes more transparently.
         </p>
       </article>
 
-      <!-- PROJECT 3 -->
-      <article class="project">
+      <!-- Project 3 -->
+      <article class="project reveal-on-scroll">
         <figure class="project__media">
-          <img src="images/projects/brand-cover.jpg" alt="Brand + Web">
+          <img src="images/projects/brand-cover.jpg" alt="Brand and Web Design">
         </figure>
+
         <header class="project__header">
           <div>
-            <p class="project__eyebrow">Case study</p>
+            <p class="project__eyebrow">Case Study</p>
             <h3 class="project__title">Independent Brand + Web Work</h3>
             <p class="project__meta">Brand identity, marketing site, visual system</p>
           </div>
           <a class="project__link" href="#" target="_blank">Read case study</a>
         </header>
+
         <p class="project__summary">
-          Visual identity and responsive website design for a small business, focused on clarity, hierarchy, and simple long-term maintenance.
+          Visual identity and website design for a small business.
         </p>
       </article>
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section section--split">
+    <section id="services" class="section section--split reveal-on-scroll">
       <div>
         <h2 class="section-title">Services</h2>
         <ul class="bullet-list">
@@ -175,18 +148,43 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="section reveal-on-scroll">
+      <h2 class="section-title">About</h2>
+
+      <div class="about-columns">
+        <div>
+          <img src="images/about/me-portrait-1.jpg" alt="Logan portrait" class="about-photo">
+          <img src="images/about/me-portrait-2.jpg" alt="Logan portrait" class="about-photo">
+        </div>
+
+        <div>
+          <p class="about-bio">
+            I am Logan. I design and build thoughtful products that blend visual clarity with practical problem-solving.
+          </p>
+
+          <ul class="about-contact-list">
+            <li><a href="mailto:youremail@example.com">Email</a></li>
+            <li><a href="#" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">Behance</a></li>
+            <li><a href="resume.pdf" target="_blank">Resume</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
-    <section id="contact" class="section section--contact">
+    <section id="contact" class="section section--contact reveal-on-scroll">
       <h2 class="section-title">Contact</h2>
       <p class="section-body">
-        For freelance work, internships, or collaborations, feel free to reach out. I’m always happy to share more work or talk through a project.
+        For freelance work, internships, or collaborations, feel free to reach out.
       </p>
 
       <ul class="contact-list">
         <li><a href="mailto:youremail@example.com">Email</a></li>
         <li><a href="#" target="_blank">LinkedIn</a></li>
         <li><a href="#" target="_blank">Behance</a></li>
-        <li><a href="#" target="_blank">Resume</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
       </ul>
     </section>
 
@@ -194,13 +192,15 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    © <span id="year"></span> Logan Oscher
+    <p>© <span id="year"></span> Logan Oscher</p>
   </footer>
 
 </div>
 
-<!-- YEAR SCRIPT -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/main.js"></script>
 
-<script src="js/main.js"></script> 
 </body>
 </html>
