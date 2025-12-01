@@ -1,6 +1,4 @@
-// ===============================
-// Main JS (Final Stable Build)
-// ===============================
+// Main JS
 
 document.addEventListener("DOMContentLoaded", () => {
   const html = document.documentElement;
@@ -9,14 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const isMobile = window.matchMedia("(max-width: 800px)").matches;
 
-  // --------------------------------------------------------------
-  // Cursor Spotlight Gradient (small, reactive, hides on nav/footer)
-  // --------------------------------------------------------------
+  // Cursor spotlight gradient
   const grad = document.querySelector(".page-gradient");
 
   function setHighlight(xPercent, yPercent) {
     if (!grad) return;
-
     document.documentElement.style.setProperty("--spot-x", `${xPercent}%`);
     document.documentElement.style.setProperty("--spot-y", `${yPercent}%`);
   }
@@ -29,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--highlight-opacity", "0");
   }
 
-  // Move and show gradient
   window.addEventListener("pointermove", (event) => {
     if (!grad) return;
 
@@ -40,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     enableHighlight();
   });
 
-  // Hide when leaving viewport
   window.addEventListener("mouseleave", disableHighlight);
 
-  // Hide on header and footer, show on main
   const header = document.querySelector("header");
   const footer = document.querySelector("footer");
   const main = document.querySelector("main");
@@ -52,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   footer?.addEventListener("mouseenter", disableHighlight);
   main?.addEventListener("mouseenter", enableHighlight);
 
-  // --------------------------------------------------------------
-  // Scroll Reveal (desktop only)
-  // --------------------------------------------------------------
+  // Scroll reveal
   function initScrollReveal() {
     if (isMobile) return;
 
@@ -83,26 +73,110 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initScrollReveal();
 
-  // --------------------------------------------------------------
-  // Simple Preloader Fade Out
-  // --------------------------------------------------------------
-  function initPreloader() {
-    const preloader = document.querySelector("#preloader");
-    const loader = document.querySelector("#loader");
+  // Project modal data
+  const PROJECT_DATA = {
+    dinklink: {
+      type: "UI/UX Case Study",
+      title: "DinkLink: Pickleball Matchmaking App",
+      body: `
+        <p>
+        I designed a mobile app interface that helps local pickleball players find partners, track performance, and manage match logistics. I built the full end-to-end experience in Figma. My focus was on creating a clean and approachable interface, visual clarity for match data, and a smooth flow for messaging and court discovery. The final system includes player profiles, real-time stats, location features, and a match dashboard. The goal was to make organizing casual play feel effortless for new and experienced players.        </p>
+        </p>
+      `,
+      behance: "https://www.behance.net/gallery/226078383/DinkLink-Final-Group-Project-%28Spring-25%29",
+      imageSrc: "images/portfolio/dinklink.png",
+      imageAlt: "DinkLink Mockup"
+    },
+    ebay: {
+      type: "Responsive UI Exploration",
+      title: "eBay Interface Redesign",
+      body: `
+        <p>
+          I reimagined the eBay browsing and product-detail experience with a modern layout and simplified user flow. This project focused on reducing visual clutter, strengthening the hierarchy of information, and improving the bidding and product selection process. I redesigned the product page, error screen, and navigation components to make the platform feel more intuitive and consistent across devices. The final system presents a cleaner shopping experience with clear call-to-actions and a more user-friendly structure.
+        </p>
+      `,
+      behance: "https://www.behance.net/gallery/239575167/Ebay-Feature-Redesign-Project",
+      imageSrc: "images/portfolio/ebayredesign.png",
+      imageAlt: "Ebay Redesign Mockup"
+    },
+    hockey: {
+      type: "Digital Media & Graphic Design",
+      title: "UNC Hockey Graphic Collection",
+      body: `
+        <p>
+          I created a series of promotional graphics for UNC Hockey that highlight major games, countdowns, and announcements. My goal was to capture the energy of UNC athletics while keeping the visuals bold and recognizable for fans. Each piece uses consistent typography, color treatments, and layout patterns to reinforce the team identity. The graphics were built for Instagram and other social platforms and were designed to stand out in fast-scrolling feeds.
+        </p>
+      `,
+      behance: "https://www.behance.net/gallery/239582165/UNC-Hockey-Graphic-Designs",
+      imageSrc: "images/portfolio/Hockey.png",
+      imageAlt: "Hockey Graphics"
+    }
+  };
 
-    if (!preloader || !loader) return;
+  const modal = document.getElementById("project-modal");
+  const modalType = document.getElementById("project-modal-type");
+  const modalTitle = document.getElementById("project-modal-title");
+  const modalBody = document.getElementById("project-modal-body");
+  const modalBehance = document.getElementById("project-modal-behance");
+  const modalImage = document.getElementById("project-modal-image");
 
-    window.addEventListener("load", () => {
-      loader.style.opacity = "0";
+  function openModal(key) {
+    const data = PROJECT_DATA[key];
+    if (!data || !modal) return;
 
-      setTimeout(() => {
-        preloader.style.opacity = "0";
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 300);
-      }, 150);
-    });
+    modalType.textContent = data.type || "";
+    modalTitle.textContent = data.title || "";
+    modalBody.innerHTML = data.body || "";
+
+    if (modalImage) {
+      if (data.imageSrc) {
+        modalImage.src = data.imageSrc;
+        modalImage.alt = data.imageAlt || data.title || "";
+        modalImage.style.display = "block";
+      } else {
+        modalImage.style.display = "none";
+      }
+    }
+
+    if (data.behance && modalBehance) {
+      modalBehance.href = data.behance;
+      modalBehance.style.display = "inline-flex";
+    } else if (modalBehance) {
+      modalBehance.style.display = "none";
+    }
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
   }
 
-  initPreloader();
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  const moreButtons = document.querySelectorAll(".project__more");
+  moreButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.project;
+      openModal(key);
+    });
+  });
+
+  modal?.addEventListener("click", (event) => {
+    const target = event.target;
+    if (
+      target instanceof HTMLElement &&
+      (target.hasAttribute("data-modal-close") ||
+        target.classList.contains("project-modal__backdrop"))
+    ) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
 });

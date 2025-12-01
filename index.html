@@ -12,6 +12,7 @@
 
 <div class="page-shell">
 
+  <!-- background gradient -->
   <div class="page-gradient"></div>
 
   <!-- HEADER -->
@@ -22,8 +23,7 @@
       </div>
 
       <nav class="site-header__nav">
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
+        <a href="#work">Featured</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -33,159 +33,132 @@
   <!-- MAIN -->
   <main id="top" class="page-main">
 
-    <!-- INTRO -->
-    <section class="section intro reveal-on-scroll">
-      <p class="eyebrow">Portfolio</p>
-
-      <h1 class="intro__title">
-        Playful interfaces. Precise systems.
-      </h1>
-
-      <p class="intro__body">
-        I am Logan, a designer and developer focused on building clear, thoughtful digital experiences.
-      </p>
-
-      <p class="intro__body">
-        I work across UX, visual design, and front-end development. I enjoy shaping products that balance creativity with practical execution.
-      </p>
-    </section>
-
-    <!-- CURRENT -->
-    <section class="section section--tight reveal-on-scroll">
-      <p class="section-label">Currently</p>
-      <p class="section-body">
-        Currently studying media and computer science while collaborating on product, UX, and brand projects.
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section reveal-on-scroll">
-      <h2 class="section-title">Projects</h2>
-
-      <!-- Project 1 -->
-      <article class="project reveal-on-scroll">
-        <figure class="project__media">
-          <img src="images/projects/ebay-cover.jpg" alt="eBay UX Case Study">
-        </figure>
-
-        <header class="project__header">
-          <div>
-            <p class="project__eyebrow">Case Study</p>
-            <h3 class="project__title">eBay Recommerce Experience</h3>
-            <p class="project__meta">UX research, product design, content strategy</p>
-          </div>
-          <a class="project__link" href="#" target="_blank">Read case study</a>
-        </header>
-
-        <p class="project__summary">
-          A concept project focused on building trust, authenticity, and sustainability around recommerce.
-        </p>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project reveal-on-scroll">
-        <figure class="project__media">
-          <img src="images/projects/app-cover.jpg" alt="Student Meal App">
-        </figure>
-
-        <header class="project__header">
-          <div>
-            <p class="project__eyebrow">Case Study</p>
-            <h3 class="project__title">Campus Meal Exchange</h3>
-            <p class="project__meta">Product design, UX flows, front-end prototype</p>
-          </div>
-          <a class="project__link" href="#" target="_blank">Read case study</a>
-        </header>
-
-        <p class="project__summary">
-          A platform that lets students trade and track meal swipes more transparently.
-        </p>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project reveal-on-scroll">
-        <figure class="project__media">
-          <img src="images/projects/brand-cover.jpg" alt="Brand and Web Design">
-        </figure>
-
-        <header class="project__header">
-          <div>
-            <p class="project__eyebrow">Case Study</p>
-            <h3 class="project__title">Independent Brand + Web Work</h3>
-            <p class="project__meta">Brand identity, marketing site, visual system</p>
-          </div>
-          <a class="project__link" href="#" target="_blank">Read case study</a>
-        </header>
-
-        <p class="project__summary">
-          Visual identity and website design for a small business.
-        </p>
-      </article>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section section--split reveal-on-scroll">
-      <div>
-        <h2 class="section-title">Services</h2>
-        <ul class="bullet-list">
-          <li>Product & UX design</li>
-          <li>Interface & visual design</li>
-          <li>Prototyping & user flows</li>
-          <li>Front-end implementation</li>
-        </ul>
+    <!-- INTRO / HERO -->
+    <section class="hero-panel reveal-on-scroll">
+      <div class="page-section-inner hero-grid">
+        <h1 class="hero-heading">
+          I'm Logan, a UNC Computer Science + Media AD/PR Major interested in 
+          <em>web design</em>, <em>graphic design</em>, & <em>software engineering</em>.
+        </h1>
       </div>
+    </section>
 
-      <div>
-        <h2 class="section-title">Tools</h2>
-        <ul class="bullet-list bullet-list--wrap">
-          <li>Figma</li>
-          <li>Adobe CC</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-        </ul>
+    <!-- FEATURED WORK -->
+    <section id="work" class="projects-section reveal-on-scroll">
+      <div class="page-section-inner">
+        <div class="projects-header">
+          <div class="projects-header-left">
+            <p class="section-title">Featured work</p>
+            <h2 class="projects-heading">Selected Projects</h2>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">UI/UX Case Study</p>
+            <h3 class="project__title">DinkLink: Pickleball Matchmaking App</h3>
+            <p class="project__meta">UI/UX design for a pickleball matchmaking app featuring profiles, stats, messaging, and location-based court discovery.</p>
+            <p class="project__summary">
+              A mobile app concept that helps pickleball players find matches, track stats, and explore local courts through a clean and intuitive interface.
+            </p>
+
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="dinklink"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+
+          <figure class="project__media">
+            <img src="images/portfolio/dinklink.png" alt="dinklight UX case study mockup">
+          </figure>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Responsive UI Exploration</p>
+            <h3 class="project__title">eBay Interface Redesign</h3>
+            <p class="project__meta">Responsive UI redesign of eBay’s product pages and bidding interactions focused on clarity, hierarchy, and ease of use.</p>
+            <p class="project__summary">
+              A modernized redesign of a select few of eBay’s interfaces with simplified layouts and a cleaner responsive user experience.
+            </p>
+
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="ebay"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+
+          <figure class="project__media">
+            <img src="images/portfolio/ebayredesign.png" alt="Ebay Redesign">
+          </figure>
+        </article>
+
+
+        <!-- Project 3 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Digital Media & Graphic Design</p>
+            <h3 class="project__title">UNC Hockey Graphic Collection</h3>
+            <p class="project__meta">Social media graphic collection for UNC Hockey featuring game promotions, countdowns, and team-focused visual branding.</p>
+            <p class="project__summary">
+              A series of promotional social graphics created for UNC Hockey with bold visuals, consistent branding, and high-energy layouts.
+            </p>
+
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="hockey"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+
+          <figure class="project__media">
+            <img src="images/portfolio/hockey.png" alt="dinklight UX case study mockup">
+          </figure>
+        </article>
+
+        
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section reveal-on-scroll">
-      <h2 class="section-title">About</h2>
-
-      <div class="about-columns">
-        <div>
-          <img src="images/about/me-portrait-1.jpg" alt="Logan portrait" class="about-photo">
-          <img src="images/about/me-portrait-2.jpg" alt="Logan portrait" class="about-photo">
-        </div>
-
-        <div>
-          <p class="about-bio">
-            I am Logan. I design and build thoughtful products that blend visual clarity with practical problem-solving.
-          </p>
-
-          <ul class="about-contact-list">
-            <li><a href="mailto:youremail@example.com">Email</a></li>
-            <li><a href="#" target="_blank">LinkedIn</a></li>
-            <li><a href="#" target="_blank">Behance</a></li>
-            <li><a href="resume.pdf" target="_blank">Resume</a></li>
-          </ul>
-        </div>
+    <section id="about" class="about-section reveal-on-scroll">
+      <div class="about-inner">
+        <h2 class="about-heading">About</h2>
+        <p class="about-body">
+          I've always been drawn to the intersection of design, technology, and user experience. As a third-year undergraduate student at UNC Chapel Hill pursuing a double major in Computer Science and Media & Journalism, I am focused on UI/UX design, web design, and interactive media. My passion for UI/UX, graphic design, and web design drives me to create content that is both visually appealing and user-centric. From 3D printing and laser cutting to building user-friendly web interfaces, I am constantly seeking ways to enhance the way people interact with technology.
+        </p>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section section--contact reveal-on-scroll">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-body">
-        For freelance work, internships, or collaborations, feel free to reach out.
-      </p>
-
-      <ul class="contact-list">
-        <li><a href="mailto:youremail@example.com">Email</a></li>
-        <li><a href="#" target="_blank">LinkedIn</a></li>
-        <li><a href="#" target="_blank">Behance</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li>
-      </ul>
+    <section id="contact" class="contact-section reveal-on-scroll">
+      <div class="about-inner">
+        <h2 class="about-heading">Contact</h2>
+        <p class="about-body">
+          For freelance work or collaborations, feel free to reach out.
+        </p>
+        <ul class="about-contact-list">
+          <li><a href="https://www.linkedin.com/in/logan-oscher/" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:loganosc@unc.edu">Email</a></li>
+          <li><a href="https://www.behance.net/loganoscher" target="_blank" rel="noreferrer">Behance</a></li>
+        </ul>
+      </div>
     </section>
 
   </main>
@@ -195,6 +168,35 @@
     <p>© <span id="year"></span> Logan Oscher</p>
   </footer>
 
+</div>
+
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="project-modal" aria-hidden="true">
+  <div class="project-modal__backdrop" data-modal-close></div>
+  <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <p class="project-modal__eyebrow" id="project-modal-type"></p>
+    <h2 class="project-modal__title" id="project-modal-title"></h2>
+
+    <figure class="project-modal__media">
+      <img id="project-modal-image" src="" alt="">
+    </figure>
+
+    <div class="project-modal__body" id="project-modal-body"></div>
+
+    <div class="project-modal__footer">
+      <a
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+        class="btn project-modal__behance-link"
+        id="project-modal-behance"
+      >
+        View on Behance
+      </a>
+
+      <button type="button" class="project-modal__close-btn" data-modal-close>×</button>
+    </div>
+  </div>
 </div>
 
 <script>
