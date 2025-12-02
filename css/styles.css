@@ -452,15 +452,55 @@ h6, .h6 { font-size: 2rem; }
 /* Footer */
 
 .site-footer {
-  flex-shrink: 0;
   border-top: 1px solid var(--color-border-soft);
   background: var(--color-bg-elevated);
-  padding: 1.4rem var(--page-padding-x) 1.8rem;
   text-align: left;
   font-size: 1.3rem;
   color: var(--color-text-soft);
   flex-direction: row;
 }
+
+
+.s-footer {
+  justify-content: space-between;
+  padding: 1.4rem var(--page-padding-x) 1.8rem;
+  border-top: 1px solid var(--color-border-soft);
+  background: var(--color-bg-elevated);
+  text-align: left;
+  flex-direction: row;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.footyform {
+  padding: 15px;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+/* Social icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.fa:hover {
+  color: var(--primary-color);
+}
+
 
 /* Reveal on scroll */
 
