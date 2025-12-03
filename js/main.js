@@ -89,6 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
       imageSrc: "images/portfolio/VT.png",
       imageAlt: "Collage of POS devices and receipts"
     },
+    
+    dinklink: {
+      type: "UI/UX Case Study",
+      title: "DinkLink: Pickleball Matchmaking App",
+      body: `
+        <p>
+        I designed a mobile app interface that helps local pickleball players find partners, track performance, and manage match logistics. I built the full end-to-end experience in Figma. My focus was on creating a clean and approachable interface, visual clarity for match data, and a smooth flow for messaging and court discovery. The final system includes player profiles, real-time stats, location features, and a match dashboard. The goal was to make organizing casual play feel effortless for new and experienced players.        </p>
+        </p>
+      `,
+      behance: "https://www.behance.net/gallery/226078383/DinkLink-Final-Group-Project-%28Spring-25%29",
+      imageSrc: "images/portfolio/dinklink.png",
+      imageAlt: "DinkLink Mockup"
+    },
     ebay: {
       type: "Responsive UI Exploration",
       title: "eBay Interface Redesign",
