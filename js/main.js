@@ -89,6 +89,21 @@ document.addEventListener("DOMContentLoaded", () => {
       imageSrc: "images/portfolio/VT.png",
       imageAlt: "Collage of POS devices and receipts"
     },
+    
+    dinklink: {
+      type: "UI/UX Case Study",
+      title: "DinkLink: Pickleball Matchmaking App",
+      body: `
+        <p>
+          A WordPress-based feature package that blends interviews, data visualization, and video to explain how rising
+          card-processing fees erode small business margins. The story highlights owner perspectives, shows effective
+          rates at different ticket sizes, and shares transparent communication tactics that keep customers informed.
+        </p>
+      `,
+      behance: "https://www.behance.net/loganoscher",
+      imageSrc: "images/portfolio/VT.png",
+      imageAlt: "Collage of POS devices and receipts"
+    },
     ebay: {
       type: "Responsive UI Exploration",
       title: "eBay Interface Redesign",
