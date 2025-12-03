@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.setAttribute("aria-hidden", "true");
   }
 
-  const moreButtons = document.querySelectorAll(".project__more");
+  const moreButtons = document.querySelectorAll(".project__more[data-project]");
   moreButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const key = btn.dataset.project;
